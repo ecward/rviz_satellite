@@ -458,6 +458,7 @@ void AerialMapDisplay::assembleScene() {
       } else {
         tex_unit = pass->createTextureUnitState();
       }
+      /*
       // For debug purposes, draw borders and lines across the image
       QImage image_copy(tile.image());
       image_copy = image_copy.convertToFormat(QImage::Format_RGB888);
@@ -493,12 +494,11 @@ void AerialMapDisplay::assembleScene() {
 
       Ogre::TexturePtr texture =
           textureFromImage(image_copy, "texture_" + name_suffix);
-
+          */
       //  only add if we have a texture for it
-      /*
       Ogre::TexturePtr texture =
           textureFromImage(tile.image(), "texture_" + name_suffix);
-          */
+
       tex_unit->setTextureName(texture->getName());
       tex_unit->setTextureFiltering(Ogre::TFO_BILINEAR);
 
