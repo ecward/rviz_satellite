@@ -17,6 +17,7 @@
 #include <ros/time.h>
 #include <rviz/display.h>
 #include <sensor_msgs/NavSatFix.h>
+#include <tf/transform_listener.h>
 
 #include <OGRE/OgreTexture.h>
 #include <OGRE/OgreMaterial.h>
@@ -135,6 +136,9 @@ protected:
   bool received_msg_;
   sensor_msgs::NavSatFix ref_fix_;
   std::shared_ptr<TileLoader> loader_;
+
+  double origin_x_in_frame_ = 0;
+  double origin_y_in_frame_ = 0;
 };
 
 } // namespace rviz
